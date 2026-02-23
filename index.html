@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Programa em C (modo romântico)</title>
+<style>
+    body {
+        margin: 0;
+        color: rgb(105, 8, 96);
+        font-family: monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        transition: background-image 0.5s ease;
+    }
+
+    #slide {
+        font-size: 28px;
+        margin-bottom: 30px;
+        background: rgba(255,255,255,0.7);
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #9318a3;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<div id="slide"></div>
+<button onclick="nextSlide()">Clique</button>
+
+<script>
+const slides = [
+"Sobre o macaco (vulgo eu)",
+"Programo em C, JS, HTML (meio mal KAKAKAK)",
+"sou Imortal 2 afundado no Valorant",
+"gosto de ver uns filmes véios",
+"charrar o bode com amigos",
+"E gostei pra crl de ti:/",
+"De todo jeito, tmj gatinha :)"
+];
+
+const images = [
+"macaco.jpg",
+"nerd.jpg",
+"jettcharrada.jpg",
+"comuna.jpg",
+"gatomakonha.jpg",
+"triste.jpg",
+"coracao.jpg"
+];
+
+let current = 0;
+
+function nextSlide() {
+    document.getElementById("slide").innerText = slides[current];
+    document.body.style.backgroundImage = `url('${images[current]}')`;
+    current = (current + 1) % slides.length;
+}
+
+nextSlide();
+</script>
+
+</body>
+</html>
